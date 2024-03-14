@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double principal = 0, rate = 0;
+        try {
+            System.out.print("Enter the principal amount: ");
+            principal = scanner.nextDouble();
+            if (principal <= 0) {
+                throw new Exception("Invalid principal amount. The principal amount should be positive.");
+            }
+            System.out.print("Enter the rate of interest: ");
+            rate = scanner.nextDouble();
+            if (rate < 0) {
+                throw new Exception("Invalid rate of interest. The rate of interest should be non-negative.");
+            }
+            double interest = calculateInterest(principal, rate);
+            System.out.println("The interest is: " + interest);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Thank you for using the Provident Fund calculator.");
+        }
+    }
+
+    public static double calculateInterest(double principal, double rate) {
+        return principal * rate / 100;
+    }
+}
