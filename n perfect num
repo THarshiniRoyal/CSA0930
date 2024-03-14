@@ -1,0 +1,31 @@
+public class PerfectNumbers {
+    public static void main(String[] args) {
+        int n = 10; // Print the first 10 perfect numbers
+
+        // Initialize a counter variable to 1
+        int count = 1;
+
+        // Iterate from 2 to infinity
+        for (int i = 2; ; i++) {
+            int sum = 0;
+
+            // Check if the number is perfect
+            for (int j = 1; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    sum += j;
+                }
+            }
+
+            // Check if the number is perfect and print it
+            if (sum == i) {
+                System.out.println(count + ". " + i);
+                count++;
+            }
+
+            // Break the loop if the required number of perfect numbers have been printed
+            if (count > n) {
+                break;
+            }
+        }
+    }
+}
