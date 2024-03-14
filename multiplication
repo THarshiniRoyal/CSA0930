@@ -1,0 +1,31 @@
+class MultiplicationTableThread extends Thread {
+    private int num1, num2;
+
+    public MultiplicationTableThread(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+
+    public void run() {
+        System.out.println("Multiplication table for " + num1 + " and " + num2 + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(num1 + " x " + i + " = " + (num1 * i));
+            System.out.println(num2 + " x " + i + " = " + (num2 * i));
+        }
+    }
+}
+
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        MultiplicationTableThread tableThread = new MultiplicationTableThread(5, 10);
+        tableThread.start();
+
+        try {
+            tableThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Multiplication table thread has finished execution.");
+    }
+}
