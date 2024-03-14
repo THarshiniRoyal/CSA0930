@@ -1,0 +1,15 @@
+import java.util.Arrays;
+
+class Main {
+  public static int nthLargest(int[] arr, int n) {
+    Arrays.sort(arr); // Sort the array
+    return arr[arr.length - n]; // Return nth largest element
+  }
+
+  public static void main(String[] args) {
+    int[] arr = {5, 2, 8, 3, 6, 9};
+    int n = 3;
+
+    System.out.println(nthLargest(arr, n)); 
+  }
+}
