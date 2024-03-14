@@ -1,0 +1,29 @@
+public class ATMMachine {
+    public static void main(String[] args) {
+        int[] notes = {100, 500, 1000, 50, 10};
+        int[] count = {5000, 2000, 1500, 2500, 5000};
+
+        int totalAmount = 0;
+        for (int i = 0; i < notes.length; i++) {
+            totalAmount += notes[i] * count[i];
+        }
+
+        System.out.println("Total amount available in the ATM machine: " + totalAmount);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the amount to withdraw: ");
+        int amount = scanner.nextInt();
+
+        if (amount > 5000 || amount % 10 != 0) {
+            System.out.println("Invalid amount. Please enter a multiple of 10 less than or equal to 5000.");
+        } else {
+            int[] withdrawnNotes = new int[notes.length];
+            for (int i = 0; i < notes.length; i++) {
+                if (amount >= notes[i]) {
+                    withdrawnNotes[i] = amount / notes[i];
+                    amount %= notes[i];
+                }
+            }
+
+            if (amount > 0) {
+                System.out.println("Insufficient amount in the ATM machine
