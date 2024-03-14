@@ -1,0 +1,26 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Solution {
+    public int numTilePossibilities(String tiles) {
+        Map<Character, Integer> tileCount = new HashMap<>();
+        for (char c : tiles.toCharArray()) {
+            tileCount.put(c, tileCount.getOrDefault(c, 0) + 1);
+        }
+
+        return dfs(tileCount);
+    }
+
+    private int dfs(Map<Character, Integer> tileCount) {
+        int sum = 0;
+        for (Map.Entry<Character, Integer> entry : tileCount.entrySet()) {
+            if (entry.getValue() > 0) {
+                sum++;
+                tileCount.put(entry.getKey(), tileCount.get(entry.getKey()) - 1);
+                sum += dfs(tileCount);
+                tileCount.put(entry.getKey(), tileCount.get(entry.getKey()) + 1);
+            }
+        }
+        return sum;
+    }
+}
