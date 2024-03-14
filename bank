@@ -1,0 +1,36 @@
+public class Bank {
+    private String name;
+    private double rateOfInterest;
+
+    // Constructor
+    public Bank(String name, double rateOfInterest) {
+        this.name = name;
+        this.rateOfInterest = rateOfInterest;
+    }
+
+    // Method to get the rate of interest
+    public double getRateOfInterest() {
+        return rateOfInterest;
+    }
+
+    // Method to display the name and rate of interest of the bank
+    public void displayBankDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Rate of Interest: " + rateOfInterest + "%");
+    }
+
+    public static void main(String[] args) {
+        Bank sbi = new Bank("SBI", 8.4);
+        Bank icici = new Bank("ICICI", 7.3);
+        Bank axis = new Bank("AXIS", 9.7);
+
+        sbi.displayBankDetails();
+        System.out.println("Rate of Interest: " + sbi.getRateOfInterest() + "%");
+
+        icici.displayBankDetails();
+        System.out.println("Rate of Interest: " + icici.getRateOfInterest() + "%");
+
+        axis.displayBankDetails();
+        System.out.println("Rate of Interest: " + axis.getRateOfInterest() + "%");
+    }
+}
