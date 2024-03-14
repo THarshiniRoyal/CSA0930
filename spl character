@@ -1,0 +1,19 @@
+public class SpecialCharacters {
+    public static void main(String[] args) {
+        String statement = "This is a sample statement!";
+
+        // Initialize count of special characters to 0
+        int count = 0;
+
+        // Iterate through each character in the statement
+        for (char c : statement.toCharArray()) {
+            // Check if the character is a special character
+            if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
+                count++;
+            }
+        }
+
+        // Print the count of special characters
+        System.out.println("Number of special characters: " + count);
+    }
+}
