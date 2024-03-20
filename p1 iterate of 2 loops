@@ -1,0 +1,19 @@
+public class Main {
+    public static void main(String[] args) {
+        int size = 10;
+
+        // Iterate through the first loop
+        for (int i = 0; i < size / 2; i++) {
+
+            // Iterate through the second loop
+            for (int j = size-1 ; j > size / 2; j--) {
+
+                // Check if the elements meet at the median
+                if (i + j == size) {
+                    System.out.println("The median where they meet is " + (i + 1));
+                    break;
+                }
+            }
+        }
+    }
+}
