@@ -1,0 +1,52 @@
+public class Main {
+    public static void main(String[] args) {
+        // Creating a String using a string literal
+        String str1 = "Hello, World!";
+
+        // Creating a String using the new keyword
+        String str2 = new String("Java Programming");
+
+        // Creating an empty String
+        String str3 = new String();
+
+        // Creating a String using the valueOf() method
+        String str4 = String.valueOf(12345);
+
+        // Creating a String using the concat() method
+        String str5 = str1.concat(" How are you today?");
+
+        // Getting the length of a String
+        int length = str2.length();
+
+        // Checking if a String is empty
+        boolean isEmpty = str3.isEmpty();
+
+        // Comparing two Strings using the equals() method
+        boolean isEqual = str1.equals(str5);
+
+        // Comparing two Strings using the compareTo() method
+        int comparison = str1.compareTo(str5);
+
+        // Extracting a substring from a String
+        String substring = str2.substring(0, 5);
+
+        // Replacing a substring in a String
+        String replaced = str2.replace("Java", "JavaScript");
+
+        // Converting a String to uppercase
+        String uppercase = str1.toUpperCase();
+
+        // Converting a String to lowercase
+        String lowercase = str1.toLowerCase();
+
+        // Checking if a String contains a substring
+        boolean contains = str2.contains("Java");
+
+        // Trimming whitespace from a String
+        String trimmed = "   Java Programming   ".trim();
+
+        System.out.println("String 1: " + str1);
+        System.out.println("String 2: " + str2);
+        System.out.println("String 3: " + str3);
+        System.out.println("String 4: " + str4);
+        System.out.println("String 5: " + str5);
