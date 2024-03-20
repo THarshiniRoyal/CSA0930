@@ -1,0 +1,35 @@
+public class Main {
+    public static void main(String[] args) {
+        // Integer data types
+        byte byteVal = 120;
+        short shortVal = 32767;
+        int intVal = 2147483647;
+        long longVal = 9223372036854775807L;
+
+        // Floating-point data types
+        float floatVal = 3.14159265358f;
+        double doubleVal = 0.1234567890123456d;
+
+        // Character data type
+        char charVal = 'A';
+
+        // Boolean data type
+        boolean booleanVal = true;
+
+        System.out.println("Integer data types:");
+        System.out.println("byte: " + byteVal);
+        System.out.println("short: " + shortVal);
+        System.out.println("int: " + intVal);
+        System.out.println("long: " + longVal);
+
+        System.out.println("\nFloating-point data types:");
+        System.out.println("float: " + floatVal);
+        System.out.println("double: " + doubleVal);
+
+        System.out.println("\nCharacter data type:");
+        System.out.println("char: " + charVal);
+
+        System.out.println("\nBoolean data type:");
+        System.out.println("boolean: " + booleanVal);
+    }
+}
