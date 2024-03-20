@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        // Find the number of prime numbers
+        int count = 0;
+        for (int number : numbers) {
+            if (isPrime(number)) {
+                count++;
+            }
+        }
+
+        System.out.println("The number of prime numbers is " + count);
+    }
+
+    public static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
