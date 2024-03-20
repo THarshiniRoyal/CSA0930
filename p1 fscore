@@ -1,0 +1,26 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] confusionMatrix = {{7, 3}, {1, 9}};
+
+        int TP = confusionMatrix[0][0];
+        int TN = confusionMatrix[1][1];
+        int FP = confusionMatrix[1][0];
+        int FN = confusionMatrix[0][1];
+
+        System.out.println("Confusion Matrix:");
+        System.out.println(Arrays.deepToString(confusionMatrix));
+
+        System.out.println("\nTP: " + TP + ", TN: " + TN + ", FP: " + FP + ", FN: " + FN);
+
+        double precision = (double) TP / (TP + FP);
+        double recall = (double) TP / (TP + FN);
+
+        System.out.println("Precision: " + precision);
+        System.out.println("Recall: " + recall);
+
+        double F1 score = 2 * (precision * recall) / (precision + recall);
+        System.out.println("F1-score: " + F1 score);
+    }
+}
