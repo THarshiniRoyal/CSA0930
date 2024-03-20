@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        int currentYear = 2073;
+        int eligibilityAge = 21;
+        int voteEligibleYear = currentYear - eligibilityAge;
+        int birthYear = 2023;
+
+        // Check if the birth year is more than 2060
+        if (birthYear > 2060) {
+            System.out.println("The birth year is " + (voteEligibleYear - (currentYear - birthYear)));
+        } else {
+            // Find the median of birth year and 2023
+            int median = (birthYear + 2023) / 2;
+            System.out.println("The birth year is " + median);
+        }
+    }
+}
