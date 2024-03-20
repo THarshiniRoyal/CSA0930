@@ -1,0 +1,75 @@
+public class ParentClass {
+    public void even() {
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public void odd() {
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 != 0) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    public void prime() {
+        for (int i = 1; i <= 20; i++) {
+            if (isPrime(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+public class ChildClass extends ParentClass {
+    @Override
+    public void even() {
+        for (int i = 1; i <= 30; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    @Override
+    public void odd() {
+        for (int i = 1; i <= 30; i++) {
+            if (i % 2 != 0) {
+                System.out.println(i);
+            }
+        }
+    }
+
+    @Override
+    public void prime() {
+        for (int i = 1; i <= 30; i++) {
+            if (isPrime(i)) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+publicclass Main {
+    public static void main(String[] args) {
+        ChildClass child = new ChildClass();
+        child.even();
+        child.odd();
+        child.prime();
+    }
+}
