@@ -1,0 +1,20 @@
+public class Main {
+    public static void main(String[] args) {
+        int num1 = 10, num2 = 20, num3 = 30;
+
+        // Find which loop contains the greatest value
+        if (num1 > num2) {
+            if (num1 > num3) {
+                System.out.println("The first loop contains the greatest value");
+            } else {
+                System.out.println("The third loop contains the greatest value");
+            }
+        } else {
+            if (num2 > num3) {
+                System.out.println("The second loop contains the greatest value");
+            } else {
+                System.out.println("The third loop contains the greatest value");
+            }
+        }
+    }
+}
