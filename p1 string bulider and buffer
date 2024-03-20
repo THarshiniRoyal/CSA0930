@@ -1,0 +1,33 @@
+import java.util.Random;
+
+public class StringBuilderVsStringBuffer {
+    public static void main(String[] args) {
+        int iterations = 100000;
+        String str = "";
+        StringBuilder sb = new StringBuilder();
+        StringBuffer sbuf = new StringBuffer();
+
+        Random random = new Random();
+        for (int i = 0; i < iterations; i++) {
+            int num = random.nextInt(100);
+            str += num;
+            sb.append(num);
+            sbuf.append(num);
+        }
+
+        long startTime = System.currentTimeMillis();
+        String resultStr = str.substring(0, str.length() / 2);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time taken by String: " + (endTime - startTime) + " milliseconds");
+
+        startTime = System.currentTimeMillis();
+        String resultSb = sb.substring(0, sb.length() / 2);
+        endTime = System.currentTimeMillis();
+        System.out.println("Time taken by StringBuilder: " + (endTime - startTime) + " milliseconds");
+
+        startTime = System.currentTimeMillis();
+        String resultSbuf = sbuf.substring(0, sbuf.length() / 2);
+        endTime = System.currentTimeMillis();
+        System.out.println("Time taken by StringBuffer: " + (endTime - startTime) + " milliseconds");
+    }
+}
